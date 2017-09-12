@@ -23,14 +23,17 @@ class Calculator: NSObject {
         case("+"): result = firstNumber + secondNumber
         case("*"): result = firstNumber * secondNumber
         case("/"):
-            if(secondNumber != 0)
+            if(secondNumber == 0.0)
             {
-                result = firstNumber / secondNumber
+                result = 1 / 0.0
             }
             else{
-                result = firstNumber
+                result = firstNumber / secondNumber
             }
-        case("%"): result = firstNumber + (secondNumber*100/firstNumber)
+        case("%"):
+            
+            result = firstNumber * secondNumber / 100
+            
         default: result = 0.0
             
         }
