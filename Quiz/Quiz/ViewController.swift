@@ -69,6 +69,8 @@ class ViewController: UIViewController {
         }
         
         else{
+            currentQuestion = 0
+            loadQuestion(currentQuestion)
             let VC = ShowScoreController()
             VC.score = self.score
             VC.total = self.quiz.count
