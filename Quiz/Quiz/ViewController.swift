@@ -8,13 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, GoBackDelegate {
 
     var quiz = [["question":"2+2", "variants":["1", "2", "4", "5", "6", "9"], "correctAnswer":"4"],
                 ["question": "tifsw", "variants":["west", "stew", "fest", "swift"], "correctAnswer":"swift"],
                 ["question": "1001 plus 0110 (in binary)", "variants":["14", "15", "16", "10", "99"], "correctAnswer":"15"]]
     
     var variants : [String] = []
+    var answered: [String] = []
     var currentQuestion = 0
     var currentQuestionText : String = ""
     var score : Int  = 0
@@ -24,7 +25,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         loadQuestion(currentQuestion)
-     
     }
     
     func loadQuestion(_ currentQuestion:Int){
@@ -38,7 +38,13 @@ class ViewController: UIViewController {
             makeButton(i)
         }
     }
-    
+    func startAgain(){
+        navigationController?.popViewController(animated: true)
+        score = 0
+        answered = []
+        currentQuestion = 0
+        loadQuestion(currentQuestion)
+    }
     func makeButton(_ i:Int){
         let button = UIButton(frame: CGRect(x: 16, y: 60*(i+2), width: Int(UIScreen.main.bounds.size.width-32), height: 45))
         button.backgroundColor = UIColor.blue
@@ -59,9 +65,11 @@ class ViewController: UIViewController {
     
     func buttonClicked(_ sender:UIButton) {
         let right = quiz[currentQuestion]["correctAnswer"] as! String
-        if(sender.titleLabel?.text == right) {
+        answered.append(sender.currentTitle!)
+        if(sender.currentTitle == right) {
             score += 1
         }
+        
         if(currentQuestion < quiz.count-1){
             currentQuestion += 1
             removeButtons()
@@ -69,13 +77,12 @@ class ViewController: UIViewController {
         }
         
         else{
-            currentQuestion = 0
-            loadQuestion(currentQuestion)
-            let VC = ShowScoreController()
+            let VC = self.storyboard?.instantiateViewController(withIdentifier: "ShowScoreController") as! ShowScoreController
             VC.score = self.score
+            VC.delegate = self
+            VC.answers = self.answered
+
             VC.total = self.quiz.count
-            
-            
             navigationController?.pushViewController(VC, animated: true)
         }
         
