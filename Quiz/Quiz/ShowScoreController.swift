@@ -28,7 +28,7 @@ class ShowScoreController: UIViewController, UITableViewDelegate, UITableViewDat
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return first.quiz.count
+        return first.singleObject.quiz.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
@@ -38,10 +38,10 @@ class ShowScoreController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultTableViewCell")
             as! ResultTableViewCell
        
-        cell.question.text = first.quiz[indexPath.row]["question"] as? String
+        cell.question.text = first.singleObject.quiz[indexPath.row].question as? String
         cell.givenAnswer.text = answers[indexPath.row] 
-        cell.rightAnswer.text = first.quiz[indexPath.row]["correctAnswer"] as? String
-        if (answers[indexPath.row] == first.quiz[indexPath.row]["correctAnswer"] as? String){
+        cell.rightAnswer.text = first.singleObject.quiz[indexPath.row].rightAnswer as? String
+        if (answers[indexPath.row] == first.singleObject.quiz[indexPath.row].rightAnswer as? String){
             cell.givenAnswer.backgroundColor = UIColor.green
         }
         else{

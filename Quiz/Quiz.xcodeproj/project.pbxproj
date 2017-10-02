@@ -14,7 +14,9 @@
 		FC2EA5B61F679650008894F0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC2EA5B41F679650008894F0 /* LaunchScreen.storyboard */; };
 		FC5997E91F79836F00AED032 /* GoBackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5997E81F79836F00AED032 /* GoBackDelegate.swift */; };
 		FC5997EB1F7984B400AED032 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5997EA1F7984B400AED032 /* ResultTableViewCell.swift */; };
+		FC8C0F541F826B1A009F3D97 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8C0F531F826B1A009F3D97 /* Question.swift */; };
 		FC9250F81F70991400C79B87 /* ShowScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9250F71F70991400C79B87 /* ShowScoreController.swift */; };
+		FCF6E7DA1F82B3130003C60A /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF6E7D91F82B3130003C60A /* Quiz.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +29,9 @@
 		FC2EA5B71F679650008894F0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC5997E81F79836F00AED032 /* GoBackDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoBackDelegate.swift; sourceTree = "<group>"; };
 		FC5997EA1F7984B400AED032 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		FC8C0F531F826B1A009F3D97 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		FC9250F71F70991400C79B87 /* ShowScoreController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowScoreController.swift; sourceTree = "<group>"; };
+		FCF6E7D91F82B3130003C60A /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				FC9250F71F70991400C79B87 /* ShowScoreController.swift */,
 				FC5997E81F79836F00AED032 /* GoBackDelegate.swift */,
 				FC5997EA1F7984B400AED032 /* ResultTableViewCell.swift */,
+				FC8C0F531F826B1A009F3D97 /* Question.swift */,
+				FCF6E7D91F82B3130003C60A /* Quiz.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -147,7 +153,9 @@
 			files = (
 				FC2EA5AE1F679650008894F0 /* ViewController.swift in Sources */,
 				FC5997E91F79836F00AED032 /* GoBackDelegate.swift in Sources */,
+				FCF6E7DA1F82B3130003C60A /* Quiz.swift in Sources */,
 				FC2EA5AC1F679650008894F0 /* AppDelegate.swift in Sources */,
+				FC8C0F541F826B1A009F3D97 /* Question.swift in Sources */,
 				FC5997EB1F7984B400AED032 /* ResultTableViewCell.swift in Sources */,
 				FC9250F81F70991400C79B87 /* ShowScoreController.swift in Sources */,
 			);

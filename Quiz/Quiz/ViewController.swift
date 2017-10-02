@@ -10,10 +10,11 @@ import UIKit
 
 class ViewController: UIViewController, GoBackDelegate {
 
-    var quiz = [["question":"2+2", "variants":["1", "2", "4", "5", "6", "9"], "correctAnswer":"4"],
-                ["question": "tifsw", "variants":["west", "stew", "fest", "swift"], "correctAnswer":"swift"],
-                ["question": "1001 plus 0110 (in binary)", "variants":["14", "15", "16", "10", "99"], "correctAnswer":"15"]]
+//    var quiz = [["question":"2+2", "variants":["1", "2", "4", "5", "6", "9"], "correctAnswer":"4"],
+//                ["question": "tifsw", "variants":["west", "stew", "fest", "swift"], "correctAnswer":"swift"],
+//                ["question": "1001 plus 0110 (in binary)", "variants":["14", "15", "16", "10", "99"], "correctAnswer":"15"]]
     
+    let singleObject = Quiz.sharedInstance
     var variants : [String] = []
     var answered: [String] = []
     var currentQuestion = 0
@@ -28,12 +29,13 @@ class ViewController: UIViewController, GoBackDelegate {
     }
     
     func loadQuestion(_ currentQuestion:Int){
-        currentQuestionText = quiz[currentQuestion]["question"] as! String
+        //currentQuestionText = quiz[currentQuestion]["question"] as! String
+        currentQuestionText = singleObject.quiz[currentQuestion].question
         questionLabel.text = currentQuestionText
         view.addSubview(questionLabel)
 
-        variants = quiz[currentQuestion]["variants"] as! [String]
-        
+       // variants = quiz[currentQuestion]["variants"] as! [String]
+        variants = singleObject.quiz[currentQuestion].variants
         for i in 0..<variants.count{
             makeButton(i)
         }
@@ -64,13 +66,14 @@ class ViewController: UIViewController, GoBackDelegate {
     
     
     func buttonClicked(_ sender:UIButton) {
-        let right = quiz[currentQuestion]["correctAnswer"] as! String
+        //let right = quiz[currentQuestion]["correctAnswer"] as! String
+        let right =  singleObject.quiz[currentQuestion].rightAnswer
         answered.append(sender.currentTitle!)
         if(sender.currentTitle == right) {
             score += 1
         }
         
-        if(currentQuestion < quiz.count-1){
+        if(currentQuestion < singleObject.quiz.count-1){
             currentQuestion += 1
             removeButtons()
             loadQuestion(currentQuestion)
@@ -82,7 +85,7 @@ class ViewController: UIViewController, GoBackDelegate {
             VC.delegate = self
             VC.answers = self.answered
 
-            VC.total = self.quiz.count
+            VC.total = self.singleObject.quiz.count
             navigationController?.pushViewController(VC, animated: true)
         }
         
