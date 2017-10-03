@@ -24,7 +24,8 @@ public class Quiz: NSObject {
         
         let fullQuiz = [one, two, three, four, five, six, seven]
         for i in 0..<5{
-            let j = Int(arc4random_uniform(6))
+            let j = Int(arc4random_uniform(7))
+            //quiz[i] = fullQuiz[j]
             quiz.append(fullQuiz[j])
         }
     }

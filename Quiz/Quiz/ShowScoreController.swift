@@ -38,10 +38,10 @@ class ShowScoreController: UIViewController, UITableViewDelegate, UITableViewDat
         let cell = tableView.dequeueReusableCell(withIdentifier: "resultTableViewCell")
             as! ResultTableViewCell
        
-        cell.question.text = first.singleObject.quiz[indexPath.row].question as? String
+        cell.question.text = first.singleObject.quiz[indexPath.row].question
         cell.givenAnswer.text = answers[indexPath.row] 
-        cell.rightAnswer.text = first.singleObject.quiz[indexPath.row].rightAnswer as? String
-        if (answers[indexPath.row] == first.singleObject.quiz[indexPath.row].rightAnswer as? String){
+        cell.rightAnswer.text = first.singleObject.quiz[indexPath.row].rightAnswer
+        if (answers[indexPath.row] == first.singleObject.quiz[indexPath.row].rightAnswer){
             cell.givenAnswer.backgroundColor = UIColor.green
         }
         else{
