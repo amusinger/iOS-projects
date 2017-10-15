@@ -12,12 +12,12 @@ import Foundation
 public class Question{
     var question: String = ""
     var variants: [String] = []
-    var rightAnswer: String = ""
+    var correctAnswer: String = ""
     
-    public init(question:String, variants:[String], rightAnswer : String)
+    public init(question:String, variants:[String], correctAnswer : String)
     {
         self.question = question
         self.variants = variants
-        self.rightAnswer = rightAnswer
+        self.correctAnswer = correctAnswer
     }
 }
