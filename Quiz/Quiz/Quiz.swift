@@ -23,7 +23,7 @@ public class Quiz: NSObject {
         let seven = Question(question: "How many holes in a polo", variants: ["1", "2", "3", "four"], correctAnswer : "3")
         
         let fullQuiz = [one, two, three, four, five, six, seven]
-        for i in 0..<5{
+        for _ in 0..<5{
             let j = Int(arc4random_uniform(7))
             //quiz[i] = fullQuiz[j]
             quiz.append(fullQuiz[j])

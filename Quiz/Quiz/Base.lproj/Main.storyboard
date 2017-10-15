@@ -69,8 +69,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gO3-5w-6II">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="111.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gO3-5w-6II">
+                                                    <rect key="frame" x="0.0" y="102.5" width="375" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="DZg-I3-caN"/>
                                                     </constraints>
@@ -83,8 +83,8 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBI-q0-6ts">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Question" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBI-q0-6ts">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="9FP-FQ-RJS"/>
                                                     </constraints>
@@ -92,8 +92,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Given answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnW-Zp-S2S">
-                                                    <rect key="frame" x="0.0" y="111.5" width="375" height="111.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Given answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnW-Zp-S2S">
+                                                    <rect key="frame" x="0.0" y="162.5" width="375.5" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Bfj-Uu-o7Y"/>
                                                     </constraints>
@@ -113,15 +113,11 @@
                                                 <constraint firstItem="gO3-5w-6II" firstAttribute="height" secondItem="uFd-LV-Lzy" secondAttribute="height" multiplier="0.5" id="7F0-tK-Zen"/>
                                                 <constraint firstAttribute="trailing" secondItem="xnW-Zp-S2S" secondAttribute="trailing" id="9cP-UF-C8i"/>
                                                 <constraint firstItem="SBI-q0-6ts" firstAttribute="top" secondItem="uFd-LV-Lzy" secondAttribute="top" id="B5O-Nu-lAT"/>
-                                                <constraint firstAttribute="trailing" secondItem="gO3-5w-6II" secondAttribute="trailing" id="ER7-3I-0kv"/>
                                                 <constraint firstItem="xnW-Zp-S2S" firstAttribute="top" secondItem="gO3-5w-6II" secondAttribute="bottom" id="GQY-cx-5dj"/>
                                                 <constraint firstAttribute="trailing" secondItem="SBI-q0-6ts" secondAttribute="trailing" id="Ha9-ee-4TE"/>
-                                                <constraint firstAttribute="trailing" secondItem="xnW-Zp-S2S" secondAttribute="trailing" id="Ntl-0A-Fcn"/>
-                                                <constraint firstItem="xnW-Zp-S2S" firstAttribute="top" secondItem="gO3-5w-6II" secondAttribute="bottom" constant="15" id="Owd-Uz-Dql"/>
                                                 <constraint firstAttribute="trailing" secondItem="SBI-q0-6ts" secondAttribute="trailing" id="PNF-TL-t6l"/>
                                                 <constraint firstItem="SBI-q0-6ts" firstAttribute="height" secondItem="uFd-LV-Lzy" secondAttribute="height" id="RPh-h9-LLD"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="SBI-q0-6ts" secondAttribute="trailing" id="TXi-7q-AlB"/>
-                                                <constraint firstAttribute="bottom" secondItem="xnW-Zp-S2S" secondAttribute="bottom" constant="15" id="a2q-df-PrI"/>
                                                 <constraint firstAttribute="trailing" secondItem="gO3-5w-6II" secondAttribute="trailing" id="b4G-U7-StP"/>
                                                 <constraint firstAttribute="bottom" secondItem="xnW-Zp-S2S" secondAttribute="bottom" id="cxo-kV-3u2"/>
                                                 <constraint firstItem="SBI-q0-6ts" firstAttribute="width" secondItem="uFd-LV-Lzy" secondAttribute="width" multiplier="0.5" id="fUZ-dj-X8k"/>
@@ -130,10 +126,9 @@
                                                 <constraint firstItem="gO3-5w-6II" firstAttribute="top" secondItem="SBI-q0-6ts" secondAttribute="bottom" constant="15" id="hCb-mB-PeD"/>
                                                 <constraint firstItem="gO3-5w-6II" firstAttribute="top" secondItem="uFd-LV-Lzy" secondAttribute="top" id="hrX-Va-A5J"/>
                                                 <constraint firstItem="xnW-Zp-S2S" firstAttribute="height" secondItem="uFd-LV-Lzy" secondAttribute="height" multiplier="0.5" id="lWy-J8-bTd"/>
+                                                <constraint firstItem="xnW-Zp-S2S" firstAttribute="leading" secondItem="gO3-5w-6II" secondAttribute="leading" id="nqj-8M-cYp"/>
                                                 <constraint firstItem="gO3-5w-6II" firstAttribute="leading" secondItem="uFd-LV-Lzy" secondAttribute="leading" id="nv6-eY-TEo"/>
                                                 <constraint firstItem="gO3-5w-6II" firstAttribute="top" secondItem="SBI-q0-6ts" secondAttribute="bottom" constant="15" id="qcn-s3-xdM"/>
-                                                <constraint firstAttribute="trailing" secondItem="xnW-Zp-S2S" secondAttribute="trailing" id="rgr-Ly-rbY"/>
-                                                <constraint firstItem="xnW-Zp-S2S" firstAttribute="top" secondItem="gO3-5w-6II" secondAttribute="bottom" constant="15" id="rtf-H3-GaJ"/>
                                                 <constraint firstItem="gO3-5w-6II" firstAttribute="width" secondItem="uFd-LV-Lzy" secondAttribute="width" multiplier="0.5" id="tkM-DD-wG7"/>
                                             </constraints>
                                             <variation key="default">
@@ -143,12 +138,10 @@
                                                     <exclude reference="TXi-7q-AlB"/>
                                                     <exclude reference="fUZ-dj-X8k"/>
                                                     <exclude reference="7F0-tK-Zen"/>
-                                                    <exclude reference="ER7-3I-0kv"/>
                                                     <exclude reference="hrX-Va-A5J"/>
                                                     <exclude reference="tkM-DD-wG7"/>
                                                     <exclude reference="h0h-o4-wdT"/>
                                                     <exclude reference="lWy-J8-bTd"/>
-                                                    <exclude reference="rgr-Ly-rbY"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=compact">
@@ -160,7 +153,6 @@
                                                     <exclude reference="TXi-7q-AlB"/>
                                                     <include reference="fUZ-dj-X8k"/>
                                                     <include reference="7F0-tK-Zen"/>
-                                                    <include reference="ER7-3I-0kv"/>
                                                     <exclude reference="b4G-U7-StP"/>
                                                     <exclude reference="hCb-mB-PeD"/>
                                                     <include reference="hrX-Va-A5J"/>
@@ -168,16 +160,15 @@
                                                     <exclude reference="qcn-s3-xdM"/>
                                                     <include reference="tkM-DD-wG7"/>
                                                     <exclude reference="9cP-UF-C8i"/>
-                                                    <exclude reference="Owd-Uz-Dql"/>
-                                                    <exclude reference="a2q-df-PrI"/>
                                                     <exclude reference="frq-YA-4Go"/>
                                                     <include reference="h0h-o4-wdT"/>
                                                     <include reference="lWy-J8-bTd"/>
-                                                    <include reference="rgr-Ly-rbY"/>
-                                                    <exclude reference="rtf-H3-GaJ"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="xnW-Zp-S2S" secondAttribute="trailing" constant="-0.5" id="nGh-eQ-XZM"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="givenAnswer" destination="xnW-Zp-S2S" id="62k-kC-MHO"/>
                                             <outlet property="question" destination="SBI-q0-6ts" id="6oh-r6-SLE"/>

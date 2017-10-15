@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, GoBackDelegate {
+class ViewController: UIViewController, GoBackDelegate{
     
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     //let singleObject = Quiz.sharedInstance
@@ -21,22 +21,14 @@ class ViewController: UIViewController, GoBackDelegate {
     var fullQuiz: [Question] = []
     var quiz: [Question] = []
     
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        activityIndicator.center = self.view.center
-        activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
-        view.addSubview(activityIndicator)
-        activityIndicator.startAnimating()
-        UIApplication.shared.beginIgnoringInteractionEvents()
-        
-
-        
-        APIManager.getQuizFromAPI {
+        activityLoader()
+        APIManager.getQuizWithAlamofire {
             (result) in
-           
-           
             for q in result{
                 self.fullQuiz.append(Question(question: q["question"] as! String , variants: q["variants"] as! [String], correctAnswer: q["correctAnswer"] as! String))
             }
@@ -47,19 +39,24 @@ class ViewController: UIViewController, GoBackDelegate {
             }
            
             self.activityIndicator.stopAnimating()
-            self.loadQuestion(self.currentQuestion)
+            UIApplication.shared.endIgnoringInteractionEvents()
          
-            
+            self.loadQuestion(self.currentQuestion)
         }
         
   
-        UIApplication.shared.endIgnoringInteractionEvents()
-            
         
         
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
+    }
+    
+    func activityLoader(){
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        view.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        UIApplication.shared.beginIgnoringInteractionEvents()
     }
     
     func loadQuestion(_ currentQuestion:Int){

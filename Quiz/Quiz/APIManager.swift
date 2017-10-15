@@ -7,10 +7,21 @@
 //
 
 import Foundation
+import Alamofire
 
 public typealias CompletionClosure = (_ hello: [AnyObject]) -> Void
 
 public class APIManager : NSObject {
+    class func getQuizWithAlamofire(Closure: @escaping CompletionClosure){
+        Alamofire.request("https://jsonbin.io/b/59e365063a67f427208e2368").responseJSON { response in
+            debugPrint(response)
+            
+            if let json = response.result.value {
+                let result = json as! [AnyObject]
+                Closure(result)
+            }
+        }
+    }
     class func getQuizFromAPI(Closure: @escaping CompletionClosure){
         let urlString = "https://jsonbin.io/b/59e365063a67f427208e2368"
         

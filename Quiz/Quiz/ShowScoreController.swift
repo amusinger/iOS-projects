@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Instructions
 
-class ShowScoreController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
+class ShowScoreController: UIViewController, UITableViewDelegate, UITableViewDataSource, CoachMarksControllerDataSource, CoachMarksControllerDelegate {
+
+  
     let textLabel = UILabel(frame: CGRect(x: 16, y: 200, width: Int(UIScreen.main.bounds.size.width-32), height: 45))
     var delegate:GoBackDelegate?
     
@@ -22,12 +24,47 @@ class ShowScoreController: UIViewController, UITableViewDelegate, UITableViewDat
 
     var first = ViewController()
     
+    let coachMarksController = CoachMarksController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        self.coachMarksController.dataSource = self
     }
-
+    
+    func numberOfCoachMarks(for coachMarksController: CoachMarksController) -> Int {
+        return 1
+    }
+    
+    let pointOfInterest = UIView()
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController,
+                              coachMarkAt index: Int) -> CoachMark {
+        return coachMarksController.helper.makeCoachMark(for: self.navigationController?.navigationBar) { (frame: CGRect) -> UIBezierPath in
+            // This will make a cutoutPath matching the shape of
+            // the component (no padding, no rounded corners).
+            return UIBezierPath(rect: frame)
+        }
+    }
+    
+    func coachMarksController(_ coachMarksController: CoachMarksController, coachMarkViewsAt index: Int, madeFrom coachMark: CoachMark) -> (bodyView: CoachMarkBodyView, arrowView: CoachMarkArrowView?) {
+        let coachViews = coachMarksController.helper.makeDefaultCoachViews(withArrow: true, arrowOrientation: coachMark.arrowOrientation)
+        coachViews.bodyView.hintLabel.text = "You've got " + String(self.score) + " points"
+        coachViews.bodyView.nextLabel.text = "Ok!"
+        
+        return (bodyView: coachViews.bodyView, arrowView: coachViews.arrowView)
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.coachMarksController.start(on: self)
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.coachMarksController.stop(immediately: true)
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quiz.count
     }
